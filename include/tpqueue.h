@@ -8,7 +8,7 @@ class TPQueue {
     struct NodeX {
         T dataX;
         NodeX* nextX;
-        NodeX(const T& value) : dataX(value), nextX(nullptr) {}
+        explicit NodeX(const T& value) : dataX(value), nextX(nullptr) {}
     };
 
     NodeX* headY;
@@ -37,7 +37,8 @@ class TPQueue {
         }
 
         NodeX* currentU = headY;
-        while (currentU->nextX != nullptr && currentU->nextX->dataX.prior >= item.prior) {
+        while (currentU->nextX != nullptr && 
+               currentU->nextX->dataX.prior >= item.prior) {
             currentU = currentU->nextX;
         }
 
