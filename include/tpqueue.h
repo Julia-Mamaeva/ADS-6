@@ -26,7 +26,7 @@ class TPQueue {
 
     void push(const T& item) {
         NodeX* newNodeV = new NodeX(item);
-        
+
         if (headY == nullptr || item.prior > headY->dataX.prior) {
             newNodeV->nextX = headY;
             headY = newNodeV;
@@ -37,7 +37,7 @@ class TPQueue {
         }
 
         NodeX* currentU = headY;
-        while (currentU->nextX != nullptr && 
+        while (currentU->nextX != nullptr &&
                currentU->nextX->dataX.prior >= item.prior) {
             currentU = currentU->nextX;
         }
